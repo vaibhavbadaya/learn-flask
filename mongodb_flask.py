@@ -32,6 +32,10 @@ def create_user():
     result = collection.insert_one(data)
     return jsonify({'message': 'User created successfully', 'id': str(result.inserted_id)})
 
+@app.route('/api/sayhello', methods=['GET'])
+def say_hello():
+    return jsonify({' message': "Hello India"})
+
 if __name__ == '__main__':
     # Run Flask on a specific host and port
     app.run(host='0.0.0.0', port=8000)
