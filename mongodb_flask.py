@@ -32,9 +32,7 @@ def create_user():
     result = collection.insert_one(data)
     return jsonify({'message': 'User created successfully', 'id': str(result.inserted_id)})
 
-data = {
-    "email_verified": False
-}
-print(data)
+if __name__ == '__main__':
+    # Run Flask on a specific host and port
+    app.run(host='0.0.0.0', port=8000)
 
-app.run(debug=True)
